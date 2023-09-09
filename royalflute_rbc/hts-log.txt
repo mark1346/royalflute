@@ -1,0 +1,20 @@
+HTTrack3.49-2 launched on Sat, 09 Sep 2023 15:48:48 at https://rebeccayrpark.wixsite.com/mysite
+(winhttrack https://rebeccayrpark.wixsite.com/mysite -O "/Users/markhan/websites/royalflute_rbc" -P none:8080 -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:48:58	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/ (from https://rebeccayrpark.wixsite.com/mysite)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/sitemap.xml (from https://rebeccayrpark.wixsite.com/mysite)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/feed.xml (from https://rebeccayrpark.wixsite.com/mysite)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/${n.uri} (from https://rebeccayrpark.wixsite.com/mysite)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/decodeURIComponent(e (from https://rebeccayrpark.wixsite.com/mysite)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/mysite/robots.txt (from https://rebeccayrpark.wixsite.com/mysite/info)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/mysite/feed.xml (from https://rebeccayrpark.wixsite.com/mysite/info)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/mysite/${n.uri} (from https://rebeccayrpark.wixsite.com/mysite/info)
+15:49:03	Error: 	"Not Found" (404) at link https://rebeccayrpark.wixsite.com/mysite/decodeURIComponent(e (from https://rebeccayrpark.wixsite.com/mysite/info)
+
+HTTrack Website Copier/3.49-2 mirror complete in 15 seconds : 15 links scanned, 5 files written (1983238 bytes overall) [524183 bytes received at 34945 bytes/sec], 2009397 bytes transferred using HTTP compression in 13 files, ratio 24%
+(9 errors, 0 warnings, 0 messages)

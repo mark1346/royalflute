@@ -1,0 +1,8 @@
+https://rebeccayrpark.wixsite.com/mysite -O "/Users/markhan/websites/royalflute_rbc" -P none:8080 -%v
+File generated automatically on Sat, 09 Sep 2023 15:48:48, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+
