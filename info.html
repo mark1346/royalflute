@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lesson Philosophy & Pricing — Royal Flute Studio · San Jose</title>
-  <meta name="description" content="The teaching philosophy and pricing of Royal Flute Studio. Private flute lessons in San Jose tailored to each student's stage — from first notes to advanced auditions and competition." />
+  <title>About the Studio — Royal Flute Studio · Santa Clara</title>
+  <meta name="description" content="A 1:1 private flute studio located two blocks from Santana Row, Santa Clara. Open to students of all levels and ages, with two studio recitals per year and a 100% All-State audition success rate." />
   <link rel="canonical" href="https://royal-flute-studio.com/info.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Royal Flute Studio" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://royal-flute-studio.com/info.html" />
-  <meta property="og:title" content="Lesson Philosophy & Pricing — Royal Flute Studio" />
-  <meta property="og:description" content="The teaching philosophy and pricing of Royal Flute Studio. Private flute lessons in San Jose tailored to each student's stage — from first notes to advanced auditions and competition." />
+  <meta property="og:title" content="About the Studio — Royal Flute Studio" />
+  <meta property="og:description" content="A 1:1 private flute studio located two blocks from Santana Row, Santa Clara. Open to students of all levels and ages, with two studio recitals per year and a 100% All-State audition success rate." />
   <meta property="og:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
   <meta property="og:image:alt" content="Rebecca Park, founder of Royal Flute Studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lesson Philosophy & Pricing — Royal Flute Studio" />
-  <meta name="twitter:description" content="The teaching philosophy and pricing of Royal Flute Studio. Private flute lessons in San Jose tailored to each student's stage — from first notes to advanced auditions and competition." />
+  <meta name="twitter:title" content="About the Studio — Royal Flute Studio" />
+  <meta name="twitter:description" content="A 1:1 private flute studio located two blocks from Santana Row, Santa Clara. Open to students of all levels and ages." />
   <meta name="twitter:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -37,12 +37,11 @@
   <style>
     /* ── Page-specific: Info ────────────────────────────────── */
 
-    /* Article opener — centered editorial title block */
+    /* Opener — centered editorial title block */
     .info-opener {
       padding-block: var(--s-9);
       text-align: center;
     }
-
     .info-opener__inner { grid-column: 3 / span 8; }
 
     .info-opener__eyebrow {
@@ -75,7 +74,6 @@
       color: var(--ink);
       margin: 0 0 var(--s-4);
     }
-
     .info-opener__title em {
       font-style: normal;
       font-family: var(--font-accent);
@@ -94,11 +92,128 @@
       .info-opener__inner { grid-column: 1 / -1; }
     }
 
+    /* ── The Studio — intro paragraph + facts panel ─────────── */
+
+    .info-studio {
+      padding-block: var(--s-8) var(--s-9);
+      border-top: 1px solid var(--ink);
+    }
+
+    .info-studio__intro {
+      grid-column: 2 / span 5;
+    }
+
+    .info-studio__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-4);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .info-studio__eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .info-studio__title {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h2);
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0 0 var(--s-5);
+    }
+    .info-studio__title em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .info-studio__copy {
+      font-family: var(--font-body);
+      font-size: 1.075rem;
+      line-height: var(--lh-body);
+      color: var(--ink-soft);
+      margin: 0 0 var(--s-4);
+    }
+    .info-studio__copy em {
+      font-style: italic;
+      font-family: var(--font-accent);
+      font-size: 1.1em;
+      color: var(--burgundy);
+    }
+    .info-studio__copy strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .info-studio__quote {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-pull);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.45;
+      color: var(--burgundy);
+      padding-top: var(--s-4);
+      margin-top: var(--s-4);
+      border-top: 1px solid var(--hairline);
+    }
+
+    .info-studio__facts {
+      grid-column: 8 / span 4;
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--ink);
+    }
+    .info-studio__facts dl { margin: 0; padding: 0; }
+    .info-studio__facts div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: var(--s-4);
+      padding: var(--s-3) 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .info-studio__facts div:last-child { border-bottom: 0; }
+
+    .info-studio__facts dt {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+    }
+    .info-studio__facts dd {
+      font-family: var(--font-accent);
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 880px) {
+      .info-studio__intro,
+      .info-studio__facts { grid-column: 1 / -1; }
+      .info-studio__facts { margin-top: var(--s-6); }
+    }
+
     /* ── Tenets — five numbered articles of faith ───────────── */
 
     .info-tenets {
       padding-block: var(--s-8) var(--s-9);
       border-top: 1px solid var(--ink);
+      background: var(--bg-surface);
     }
 
     .info-tenets__head {
@@ -106,7 +221,6 @@
       text-align: center;
       margin-bottom: var(--s-8);
     }
-
     .info-tenets__kicker {
       font-family: var(--font-body);
       font-size: var(--t-eyebrow);
@@ -116,7 +230,6 @@
       color: var(--gold);
       margin: 0 0 var(--s-3);
     }
-
     .info-tenets__head h2 {
       font-family: var(--font-display);
       font-variation-settings: var(--fr-h2);
@@ -126,7 +239,6 @@
       color: var(--ink);
       margin: 0;
     }
-
     .info-tenets__head h2 em {
       font-style: normal;
       font-family: var(--font-accent);
@@ -140,7 +252,6 @@
       padding: 0;
       border-top: 1px solid var(--ink);
     }
-
     .info-tenets__item {
       display: grid;
       grid-template-columns: 100px 1fr;
@@ -150,10 +261,7 @@
       border-bottom: 1px solid var(--hairline);
       transition: background var(--dur-med) var(--ease-stately);
     }
-
-    .info-tenets__item:hover {
-      background: rgba(176, 141, 62, 0.05);
-    }
+    .info-tenets__item:hover { background: rgba(176, 141, 62, 0.05); }
 
     .info-tenets__num {
       font-family: var(--font-accent);
@@ -162,7 +270,6 @@
       color: var(--gold);
       text-align: right;
     }
-
     .info-tenets__text {
       font-family: var(--font-body);
       font-size: clamp(1.05rem, 1.45vw, 1.2rem);
@@ -170,12 +277,7 @@
       color: var(--ink-soft);
       margin: 0;
     }
-
-    .info-tenets__text strong {
-      font-weight: 500;
-      color: var(--ink);
-    }
-
+    .info-tenets__text strong { font-weight: 500; color: var(--ink); }
     .info-tenets__text em {
       font-family: var(--font-accent);
       font-style: normal;
@@ -185,36 +287,26 @@
     @media (max-width: 880px) {
       .info-tenets__head,
       .info-tenets__list { grid-column: 1 / -1; }
-
-      .info-tenets__item {
-        grid-template-columns: 60px 1fr;
-        column-gap: var(--s-4);
-      }
+      .info-tenets__item { grid-template-columns: 60px 1fr; column-gap: var(--s-4); }
     }
-
     @media (max-width: 480px) {
-      .info-tenets__item {
-        grid-template-columns: 1fr;
-        row-gap: var(--s-2);
-      }
+      .info-tenets__item { grid-template-columns: 1fr; row-gap: var(--s-2); }
       .info-tenets__num { text-align: left; }
     }
 
-    /* ── Tiers — two-column pricing card ─────────────────────── */
+    /* ── Results — student achievements (concert-programme style) ─── */
 
-    .info-pricing {
+    .info-results {
       padding-block: var(--s-8) var(--s-9);
-      background: var(--bg-surface);
       border-top: 1px solid var(--ink);
     }
 
-    .info-pricing__head {
+    .info-results__head {
       grid-column: 3 / span 8;
       text-align: center;
-      margin-bottom: var(--s-7);
+      margin-bottom: var(--s-8);
     }
-
-    .info-pricing__kicker {
+    .info-results__kicker {
       font-family: var(--font-body);
       font-size: var(--t-eyebrow);
       font-weight: 500;
@@ -223,8 +315,7 @@
       color: var(--gold);
       margin: 0 0 var(--s-3);
     }
-
-    .info-pricing__head h2 {
+    .info-results__head h2 {
       font-family: var(--font-display);
       font-variation-settings: var(--fr-h2);
       font-size: var(--t-display);
@@ -233,118 +324,102 @@
       color: var(--ink);
       margin: 0;
     }
-
-    .info-pricing__head h2 em {
+    .info-results__head h2 em {
       font-style: normal;
       font-family: var(--font-accent);
       color: var(--burgundy);
     }
 
-    .info-pricing__tiers {
-      grid-column: 2 / span 10;
+    .info-results__block {
+      grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 1px solid var(--ink);
-      background: var(--bg-ivory);
+      grid-template-columns: repeat(12, var(--col));
+      column-gap: var(--gutter);
+      padding-block: var(--s-6);
+      border-top: 1px solid var(--hairline);
     }
-
-    .info-pricing__tier {
-      padding: var(--s-7) var(--s-6);
-      border-right: 1px solid var(--hairline);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .info-pricing__tier:last-child { border-right: 0; }
-
-    .info-pricing__num {
-      font-family: var(--font-accent);
-      font-size: 1.15rem;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      margin: 0 0 var(--s-3);
-    }
-
-    .info-pricing__tier h3 {
-      font-family: var(--font-display);
-      font-variation-settings: var(--fr-h2);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      line-height: 1.1;
-      letter-spacing: var(--tk-tight);
-      color: var(--ink);
-      margin: 0 0 var(--s-3);
-    }
-
-    .info-pricing__tier h3 em {
-      font-style: normal;
-      font-family: var(--font-accent);
-      color: var(--burgundy);
-    }
-
-    .info-pricing__sub {
-      font-family: var(--font-accent);
-      font-size: 1.05rem;
-      letter-spacing: 0.06em;
-      color: var(--burgundy);
-      margin: 0 0 var(--s-5);
-      padding-bottom: var(--s-4);
+    .info-results__block:last-of-type {
       border-bottom: 1px solid var(--hairline);
     }
 
-    .info-pricing__copy {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      line-height: var(--lh-body);
-      color: var(--ink-soft);
-      margin: 0 0 var(--s-4);
+    .info-results__category {
+      grid-column: 2 / span 3;
+      align-self: start;
     }
-
-    .info-pricing__copy:last-of-type { flex: 1; }
-
-    .info-pricing__price {
-      font-family: var(--font-body);
-      font-size: var(--t-eyebrow);
-      font-weight: 500;
-      letter-spacing: var(--tk-eyebrow);
-      text-transform: uppercase;
+    .info-results__roman {
+      font-family: var(--font-accent);
+      font-size: 1rem;
+      letter-spacing: 0.3em;
       color: var(--gold);
-      padding-top: var(--s-5);
-      margin: var(--s-3) 0 0;
-      border-top: 1px solid var(--hairline);
+      margin: 0 0 var(--s-2);
     }
-
-    .info-pricing__price span {
-      font-family: var(--font-accent);
-      text-transform: none;
+    .info-results__category h3 {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h3);
+      font-size: clamp(1.2rem, 1.7vw, 1.4rem);
       letter-spacing: 0.02em;
-      color: var(--burgundy);
-      font-size: 1.05rem;
-      margin-right: var(--s-2);
+      color: var(--ink);
+      margin: 0;
     }
-
-    .info-pricing__note {
-      grid-column: 2 / span 10;
-      margin-top: var(--s-6);
-      text-align: center;
+    .info-results__category h3 em {
+      font-style: normal;
       font-family: var(--font-accent);
-      font-size: 1rem;
+      color: var(--burgundy);
+    }
+    .info-results__lede {
+      font-family: var(--font-body);
+      font-size: var(--t-meta);
       letter-spacing: 0.04em;
       color: var(--muted);
+      margin: var(--s-2) 0 0;
+      font-style: italic;
     }
 
-    .info-pricing__note::before {
-      content: "*  ";
-      color: var(--gold);
+    .info-results__list {
+      grid-column: 6 / span 7;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .info-results__entry {
+      padding-block: var(--s-3);
+      border-bottom: 1px dotted rgba(28, 24, 23, 0.22);
+      font-family: var(--font-body);
+      font-size: var(--t-body-sm);
+      color: var(--ink-soft);
+    }
+    .info-results__entry:last-child { border-bottom: 0; }
+    .info-results__entry .accent {
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .info-results__stat {
+      grid-column: 6 / span 7;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: var(--s-4);
+    }
+    .info-results__stat-label {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink-soft);
+    }
+    .info-results__stat-value {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h3);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      letter-spacing: var(--tk-tight);
+      color: var(--burgundy);
+      line-height: 1;
     }
 
     @media (max-width: 880px) {
-      .info-pricing__head,
-      .info-pricing__tiers,
-      .info-pricing__note { grid-column: 1 / -1; }
-
-      .info-pricing__tiers { grid-template-columns: 1fr; }
-      .info-pricing__tier { border-right: 0; border-bottom: 1px solid var(--hairline); }
-      .info-pricing__tier:last-child { border-bottom: 0; }
+      .info-results__category,
+      .info-results__list,
+      .info-results__stat { grid-column: 1 / -1; }
+      .info-results__category { margin-bottom: var(--s-4); }
     }
 
     /* ── Closing CTA ─────────────────────────────────────────── */
@@ -354,9 +429,7 @@
       text-align: center;
       border-top: 1px solid var(--ink);
     }
-
     .info-cta__inner { grid-column: 3 / span 8; }
-
     .info-cta__kicker {
       font-family: var(--font-body);
       font-size: var(--t-eyebrow);
@@ -366,7 +439,6 @@
       color: var(--gold);
       margin: 0 0 var(--s-3);
     }
-
     .info-cta h2 {
       font-family: var(--font-display);
       font-variation-settings: var(--fr-h2);
@@ -376,13 +448,11 @@
       color: var(--ink);
       margin: 0 0 var(--s-6);
     }
-
     .info-cta h2 em {
       font-style: normal;
       font-family: var(--font-accent);
       color: var(--burgundy);
     }
-
     .info-cta a {
       display: inline-flex;
       align-items: center;
@@ -398,38 +468,24 @@
       transition: background var(--dur-fast) var(--ease-editorial),
                   color var(--dur-fast) var(--ease-editorial);
     }
-
     .info-cta a::after {
       content: "→";
       font-family: var(--font-accent);
       color: var(--gold);
       transition: transform var(--dur-med) var(--ease-stately);
     }
-
     .info-cta a:hover {
       background: var(--ink);
       color: var(--bg-ivory);
     }
-
     .info-cta a:hover::after {
       color: var(--gold-soft);
       transform: translateX(6px);
     }
-
     @media (max-width: 880px) {
       .info-cta__inner { grid-column: 1 / -1; }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://royal-flute-studio.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Info", "item": "https://royal-flute-studio.com/info.html" }
-    ]
-  }
-  </script>
 </head>
 
 <body>
@@ -437,7 +493,7 @@
 <!-- ──────── Masthead ──────── -->
 <header class="masthead">
   <p class="masthead__locale">
-    <span>San Jose</span><span>California</span><span>Established 2018</span>
+    <span>Santa Clara</span><span>California</span><span>Established 2023</span>
   </p>
   <p class="masthead__wordmark"><a href="index.html">Royal Flute Studio</a></p>
   <nav class="masthead__nav" aria-label="Primary">
@@ -455,14 +511,50 @@
     <div class="grid">
       <div class="info-opener__inner">
         <p class="info-opener__eyebrow">Volume I · Pedagogy</p>
-        <h1 class="info-opener__title">Lesson Philosophy &amp; <em>Pricing</em></h1>
+        <h1 class="info-opener__title">About the <em>studio</em></h1>
         <p class="info-opener__lede">A studio shaped around the student.</p>
       </div>
     </div>
   </section>
 
+  <!-- ──────── The Studio ──────── -->
+  <section class="info-studio reveal reveal-2">
+    <div class="grid">
+
+      <div class="info-studio__intro">
+        <p class="info-studio__eyebrow">The Studio</p>
+        <h2 class="info-studio__title">One-to-one, shaped to the <em>student</em>.</h2>
+        <p class="info-studio__copy">
+          Royal Flute Studio is a <strong>1:1 private flute studio</strong> located
+          <em>two blocks from Santana Row, Santa Clara, CA</em>. Open to teaching students of
+          <strong>all levels and ages</strong> &mdash; our youngest student is seven.
+        </p>
+        <p class="info-studio__copy">
+          The studio holds <strong>two recitals each year</strong>, and every student is given a
+          performance opportunity. Lesson frequency is customisable to each student&rsquo;s pace,
+          and a strong personalised music profile is built for each one.
+        </p>
+        <p class="info-studio__quote">
+          &ldquo;Every student possesses distinct qualities and talents, and I am dedicated to
+          recognising and nurturing these traits throughout your music journey.&rdquo;
+        </p>
+      </div>
+
+      <div class="info-studio__facts">
+        <dl>
+          <div><dt>Format</dt><dd>1:1 private</dd></div>
+          <div><dt>Ages</dt><dd>7 &amp; up</dd></div>
+          <div><dt>Recitals</dt><dd>Two per year</dd></div>
+          <div><dt>Schedule</dt><dd>Customisable</dd></div>
+          <div><dt>All-State pass rate</dt><dd>100 %</dd></div>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ──────── Tenets ──────── -->
-  <section class="info-tenets reveal reveal-2">
+  <section class="info-tenets reveal reveal-3">
     <div class="grid">
 
       <header class="info-tenets__head">
@@ -474,14 +566,14 @@
         <li class="info-tenets__item">
           <span class="info-tenets__num">I</span>
           <p class="info-tenets__text">
-            <strong>Customized one-on-one lessons</strong> recognizing each student&rsquo;s unique strengths,
+            <strong>Customised one-on-one lessons</strong> recognising each student&rsquo;s unique strengths,
             weaknesses, and learning styles.
           </p>
         </li>
         <li class="info-tenets__item">
           <span class="info-tenets__num">II</span>
           <p class="info-tenets__text">
-            <strong>Personalized guidance</strong> and adaptive teaching strategy to maximize the student&rsquo;s
+            <strong>Personalised guidance</strong> and adaptive teaching strategy to maximise the student&rsquo;s
             progress.
           </p>
         </li>
@@ -511,60 +603,82 @@
     </div>
   </section>
 
-  <!-- ──────── Pricing ──────── -->
-  <section class="info-pricing reveal reveal-3">
+  <!-- ──────── Results ──────── -->
+  <section class="info-results reveal reveal-4">
     <div class="grid">
 
-      <header class="info-pricing__head">
-        <p class="info-pricing__kicker">— Two Programmes —</p>
-        <h2>Pricing &amp; <em>tuition</em></h2>
+      <header class="info-results__head">
+        <p class="info-results__kicker">— A Studio Programme —</p>
+        <h2>Student <em>results</em></h2>
       </header>
 
-      <div class="info-pricing__tiers">
-
-        <article class="info-pricing__tier">
-          <p class="info-pricing__num">I</p>
-          <h3>Beginner &amp; <em>Intermediate</em></h3>
-          <p class="info-pricing__sub">Foundations · Tone · Voice</p>
-          <p class="info-pricing__copy">
-            Working on the basics &mdash; posture, breathing, embouchure, learning notes, and basic tunes.
-          </p>
-          <p class="info-pricing__copy">
-            Learning to play all three octaves on the flute. Able to play musical-theatre, popular, or easy
-            classical pieces in the student&rsquo;s own style.
-          </p>
-          <p class="info-pricing__price"><span>Tuition</span>by enquiry</p>
-        </article>
-
-        <article class="info-pricing__tier">
-          <p class="info-pricing__num">II</p>
-          <h3><em>Advanced</em></h3>
-          <p class="info-pricing__sub">Audition · Competition · Repertoire</p>
-          <p class="info-pricing__copy">
-            All-State Band &amp; Orchestra, college auditions, and competition preparation. Advanced players able
-            to perform difficult classical repertoire.
-          </p>
-          <p class="info-pricing__copy">
-            Experience the full expressive range of the flute &mdash; and perform with a high level of creativity
-            and command.
-          </p>
-          <p class="info-pricing__price"><span>Tuition</span>by enquiry</p>
-        </article>
-
+      <!-- I. Competitions -->
+      <div class="info-results__block">
+        <div class="info-results__category">
+          <p class="info-results__roman">I</p>
+          <h3>In <em>competition</em></h3>
+          <p class="info-results__lede">Students placed in international and regional competitions including:</p>
+        </div>
+        <ul class="info-results__list">
+          <li class="info-results__entry"><span class="accent">Golden Classical Music Competition</span></li>
+          <li class="info-results__entry"><span class="accent">San Francisco International Innovative Open Music Competition</span></li>
+          <li class="info-results__entry"><span class="accent">London International Music Competition</span></li>
+          <li class="info-results__entry"><span class="accent">World Open Music Competition</span> &nbsp;·&nbsp; <span class="accent">Silicon Valley Music Competition</span></li>
+          <li class="info-results__entry"><span class="accent">Great Composers Competition</span> &nbsp;·&nbsp; <span class="accent">CWCC Solo / Ensemble Music Competition</span></li>
+          <li class="info-results__entry"><span class="accent">Charleston International Music Competition</span></li>
+        </ul>
       </div>
 
-      <p class="info-pricing__note">All trial lessons are offered at the beginner rate.</p>
+      <!-- II. Ensembles -->
+      <div class="info-results__block">
+        <div class="info-results__category">
+          <p class="info-results__roman">II</p>
+          <h3>In <em>ensemble</em></h3>
+          <p class="info-results__lede">Students prepared for, and admitted to:</p>
+        </div>
+        <ul class="info-results__list">
+          <li class="info-results__entry"><span class="accent">Golden State Youth Orchestra</span></li>
+          <li class="info-results__entry"><span class="accent">California Youth Symphony</span></li>
+          <li class="info-results__entry"><span class="accent">California Philharmonic Youth Orchestra</span></li>
+          <li class="info-results__entry"><span class="accent">Hope Box Orchestra</span></li>
+          <li class="info-results__entry"><span class="accent">San Jose Youth Symphony</span></li>
+        </ul>
+      </div>
+
+      <!-- III. Stages -->
+      <div class="info-results__block">
+        <div class="info-results__category">
+          <p class="info-results__roman">III</p>
+          <h3>On <em>stage</em></h3>
+          <p class="info-results__lede">Students have performed at:</p>
+        </div>
+        <ul class="info-results__list">
+          <li class="info-results__entry"><span class="accent">Carnegie Hall</span>, New York</li>
+        </ul>
+      </div>
+
+      <!-- IV. Auditions -->
+      <div class="info-results__block">
+        <div class="info-results__category">
+          <p class="info-results__roman">IV</p>
+          <h3>In <em>audition</em></h3>
+        </div>
+        <div class="info-results__stat">
+          <span class="info-results__stat-label">All-State audition success rate</span>
+          <span class="info-results__stat-value">100&thinsp;%</span>
+        </div>
+      </div>
 
     </div>
   </section>
 
   <!-- ──────── Closing CTA ──────── -->
-  <section class="info-cta reveal reveal-4">
+  <section class="info-cta reveal reveal-5">
     <div class="grid">
       <div class="info-cta__inner">
         <p class="info-cta__kicker">— To Continue —</p>
         <h2>Reserve a <em>trial</em></h2>
-        <a href="book-online.html">Book a Lesson</a>
+        <a href="book-online.html">Schedule a Trial</a>
       </div>
     </div>
   </section>
@@ -577,7 +691,7 @@
     <div class="col-4 site-footer__col">
       <p class="eyebrow">Studio</p>
       <p class="site-footer__name">Royal Flute Studio</p>
-      <p class="site-footer__loc">San Jose, California</p>
+      <p class="site-footer__loc">Santa Clara, California</p>
     </div>
     <div class="col-4 site-footer__col site-footer__contact">
       <p class="eyebrow">Correspondence</p>
@@ -601,6 +715,17 @@
     &copy; <span id="year"></span> Royal Flute Studio
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://royal-flute-studio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Info", "item": "https://royal-flute-studio.com/info.html" }
+  ]
+}
+</script>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book a Lesson — Royal Flute Studio · San Jose</title>
-  <meta name="description" content="Reserve a private flute lesson in San Jose at Royal Flute Studio. Trial lessons are offered at the beginner rate. We respond within forty-eight hours." />
+  <title>Book a Lesson — Royal Flute Studio · Santa Clara</title>
+  <meta name="description" content="To reserve a flute lesson at Royal Flute Studio, please write to royalflutestudio@gmail.com or call (408) 658-9050. Trial lessons are available. We respond within forty-eight hours." />
   <link rel="canonical" href="https://royal-flute-studio.com/book-online.html" />
 
   <meta property="og:type" content="website" />
@@ -12,13 +12,13 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://royal-flute-studio.com/book-online.html" />
   <meta property="og:title" content="Book a Lesson — Royal Flute Studio" />
-  <meta property="og:description" content="Reserve a private flute lesson in San Jose at Royal Flute Studio. Trial lessons are offered at the beginner rate. We respond within forty-eight hours." />
+  <meta property="og:description" content="To reserve a flute lesson at Royal Flute Studio, please write to royalflutestudio@gmail.com or call (408) 658-9050. Trial lessons are available." />
   <meta property="og:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
   <meta property="og:image:alt" content="Rebecca Park, founder of Royal Flute Studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Book a Lesson — Royal Flute Studio" />
-  <meta name="twitter:description" content="Reserve a private flute lesson in San Jose at Royal Flute Studio. Trial lessons are offered at the beginner rate. We respond within forty-eight hours." />
+  <meta name="twitter:description" content="Reserve a private flute lesson in Santa Clara — by email or telephone." />
   <meta name="twitter:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -41,7 +41,6 @@
       padding-block: var(--s-9) var(--s-8);
       text-align: center;
     }
-
     .book-opener__inner { grid-column: 3 / span 8; }
 
     .book-opener__eyebrow {
@@ -74,7 +73,6 @@
       color: var(--ink);
       margin: 0 0 var(--s-4);
     }
-
     .book-opener__title em {
       font-style: normal;
       font-family: var(--font-accent);
@@ -93,7 +91,7 @@
       .book-opener__inner { grid-column: 1 / -1; }
     }
 
-    /* ── Body: sidebar + form ───────────────────────────────── */
+    /* ── Body: aside + compose card ─────────────────────────── */
 
     .book-body {
       padding-block: var(--s-7) var(--s-9);
@@ -101,10 +99,9 @@
     }
 
     .book-aside {
-      grid-column: 1 / span 4;
+      grid-column: 1 / span 5;
       align-self: start;
-      position: sticky;
-      top: 200px;
+      padding-right: clamp(0px, 2vw, 1.5rem);
     }
 
     .book-aside__kicker {
@@ -134,21 +131,44 @@
       line-height: 1.15;
       letter-spacing: var(--tk-tight);
       color: var(--ink);
-      margin: 0 0 var(--s-4);
+      margin: 0 0 var(--s-5);
     }
-
     .book-aside h3 em {
       font-style: normal;
       font-family: var(--font-accent);
       color: var(--burgundy);
     }
 
-    .book-aside__copy {
+    .book-aside__checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: book-aside;
+    }
+    .book-aside__checklist li {
+      counter-increment: book-aside;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-items: baseline;
+      column-gap: var(--s-3);
+      padding-block: var(--s-3);
+      border-bottom: 1px solid var(--hairline);
       font-family: var(--font-body);
       font-size: 1rem;
-      line-height: var(--lh-body);
+      line-height: 1.55;
       color: var(--ink-soft);
-      margin: 0 0 var(--s-6);
+    }
+    .book-aside__checklist li:last-child { border-bottom: 0; }
+    .book-aside__checklist li::before {
+      content: counter(book-aside, upper-roman);
+      font-family: var(--font-accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+    }
+    .book-aside__checklist li strong {
+      font-weight: 500;
+      color: var(--ink);
     }
 
     .book-aside__rule {
@@ -167,16 +187,17 @@
       color: var(--muted);
       margin: 0 0 var(--s-3);
     }
-
-    .book-aside__contact {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-2);
+    .book-aside__location {
       font-family: var(--font-body);
       font-size: 1rem;
+      line-height: var(--lh-body);
+      color: var(--ink-soft);
+      margin: 0;
     }
-
-    .book-aside__contact a { color: var(--ink); }
+    .book-aside__location .accent {
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
 
     .book-aside__note {
       font-family: var(--font-accent);
@@ -186,74 +207,162 @@
       color: var(--muted);
       margin: 0;
     }
-
     .book-aside__note::before {
       content: "*  ";
       color: var(--gold);
     }
 
-    /* Form column */
-    .book-form { grid-column: 6 / span 7; }
+    /* ── Compose card (right) ───────────────────────────────── */
 
-    .book-form__caption {
-      font-family: var(--font-accent);
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      margin: 0 0 var(--s-4);
-      padding-bottom: var(--s-3);
-      border-bottom: 1px solid var(--hairline);
+    .book-compose {
+      grid-column: 7 / span 6;
+      padding: var(--s-7) var(--s-6);
+      border: 1px solid var(--ink);
+      background: var(--bg-surface);
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+      flex-direction: column;
       gap: var(--s-3);
-      flex-wrap: wrap;
     }
 
-    .book-form__caption span:last-child {
+    .book-compose__kicker {
       font-family: var(--font-body);
       font-size: var(--t-eyebrow);
       font-weight: 500;
       letter-spacing: var(--tk-eyebrow);
       text-transform: uppercase;
       color: var(--gold);
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .book-compose__kicker::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
     }
 
-    .book-form__frame {
+    .book-compose__title {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h2);
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      line-height: 1.1;
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0 0 var(--s-3);
+    }
+    .book-compose__title em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .book-compose__address {
+      font-family: var(--font-accent);
+      font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin: 0;
+      padding-bottom: var(--s-5);
+      border-bottom: 1px solid var(--hairline);
+      word-break: break-all;
+    }
+
+    .book-compose__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--s-3);
+      padding: var(--s-4) var(--s-5);
+      margin-top: var(--s-2);
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--bg-ivory);
+      background: var(--ink);
       border: 1px solid var(--ink);
-      background: var(--bg-ivory);
-      padding: var(--s-3);
+      transition: background var(--dur-fast) var(--ease-editorial),
+                  border-color var(--dur-fast) var(--ease-editorial),
+                  letter-spacing var(--dur-med) var(--ease-stately);
+    }
+    .book-compose__cta::after {
+      content: "→";
+      font-family: var(--font-accent);
+      font-size: 1.1rem;
+      color: var(--gold-soft);
+      transition: transform var(--dur-med) var(--ease-stately);
+    }
+    .book-compose__cta:hover {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      letter-spacing: calc(var(--tk-eyebrow) + 0.02em);
+    }
+    .book-compose__cta:hover::after {
+      transform: translateX(6px);
     }
 
-    .book-form__frame iframe {
-      width: 100%;
-      min-height: 1280px;
-      border: 0;
+    .book-compose__sep {
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+      margin-block: var(--s-4);
+      font-family: var(--font-accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .book-compose__sep::before,
+    .book-compose__sep::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--hairline);
+    }
+
+    .book-compose__phone {
       display: block;
+      font-family: var(--font-display);
+      font-variation-settings: "opsz" 36, "SOFT" 60, "wght" 350;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-align: center;
+      padding-block: 0.25em;
+      border-bottom: 1px solid var(--hairline);
+      transition: color var(--dur-fast) var(--ease-editorial),
+                  border-color var(--dur-fast) var(--ease-editorial);
+      font-feature-settings: "onum", "kern", "liga";
+    }
+    .book-compose__phone:hover {
+      color: var(--burgundy);
+      border-bottom-color: var(--gold);
+    }
+
+    .book-compose__hours {
+      margin: var(--s-4) 0 0;
+      font-family: var(--font-accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      text-align: center;
     }
 
     @media (max-width: 880px) {
       .book-aside,
-      .book-form { grid-column: 1 / -1; }
-
+      .book-compose { grid-column: 1 / -1; }
       .book-aside {
-        position: static;
+        padding-right: 0;
         margin-bottom: var(--s-7);
         padding-bottom: var(--s-6);
         border-bottom: 1px solid var(--hairline);
       }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://royal-flute-studio.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Book a Lesson", "item": "https://royal-flute-studio.com/book-online.html" }
-    ]
-  }
-  </script>
 </head>
 
 <body>
@@ -261,7 +370,7 @@
 <!-- ──────── Masthead ──────── -->
 <header class="masthead">
   <p class="masthead__locale">
-    <span>San Jose</span><span>California</span><span>Established 2018</span>
+    <span>Santa Clara</span><span>California</span><span>Established 2023</span>
   </p>
   <p class="masthead__wordmark"><a href="index.html">Royal Flute Studio</a></p>
   <nav class="masthead__nav" aria-label="Primary">
@@ -280,49 +389,54 @@
       <div class="book-opener__inner">
         <p class="book-opener__eyebrow">Volume III · Reservations</p>
         <h1 class="book-opener__title">Reserve a <em>lesson</em></h1>
-        <p class="book-opener__lede">Please share a few details &mdash; we will reply within forty-eight hours.</p>
+        <p class="book-opener__lede">Please write to us &mdash; we reply within forty-eight hours.</p>
       </div>
     </div>
   </section>
 
-  <!-- ──────── Body: sidebar + form ──────── -->
+  <!-- ──────── Body: aside + compose card ──────── -->
   <section class="book-body reveal reveal-2">
     <div class="grid">
 
       <aside class="book-aside">
-        <p class="book-aside__kicker">Reservation</p>
-        <h3>Before you <em>begin</em></h3>
-        <p class="book-aside__copy">
-          Please share the student&rsquo;s playing level, age, and primary goals. We will reply within
-          forty-eight hours to propose a time.
+        <p class="book-aside__kicker">Before you write</p>
+        <h3>What to <em>include</em></h3>
+        <ol class="book-aside__checklist">
+          <li><strong>Student&rsquo;s name &amp; age.</strong></li>
+          <li><strong>Current playing level</strong> &mdash; beginner, intermediate, or advanced.</li>
+          <li><strong>Preferred days &amp; times</strong> for lessons.</li>
+          <li><strong>Goals</strong> &mdash; audition, recital, or general study.</li>
+          <li>Anything else you&rsquo;d like us to know.</li>
+        </ol>
+
+        <div class="book-aside__rule"></div>
+
+        <p class="book-aside__heading">Studio location</p>
+        <p class="book-aside__location">
+          Two blocks from <span class="accent">Santana Row</span>, Santa Clara, CA.
+          Exact address is shared upon booking.
         </p>
 
         <div class="book-aside__rule"></div>
 
-        <p class="book-aside__heading">Or write directly</p>
-        <div class="book-aside__contact">
-          <a class="link-gold" href="tel:+14086589050">(408) 658&#8209;9050</a>
-          <a class="link-gold" href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a>
-        </div>
-
-        <div class="book-aside__rule"></div>
-
-        <p class="book-aside__note">Trial lessons are offered at the beginner rate.</p>
+        <p class="book-aside__note">Trial lessons are available &mdash; please mention in your message.</p>
       </aside>
 
-      <div class="book-form">
-        <p class="book-form__caption">
-          <span>The Intake Form</span>
-          <span>Hosted by Google Forms</span>
-        </p>
-        <div class="book-form__frame">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSd9w22QmXoDPvzhiXwWfcd-tYTxaLGpt7k3RkHihIw05ibLzw/viewform?embedded=true"
-            title="Royal Flute Studio booking form"
-            loading="lazy">
-            Loading the form&hellip;
-          </iframe>
-        </div>
+      <div class="book-compose">
+        <p class="book-compose__kicker">Correspondence</p>
+        <h2 class="book-compose__title">Write to the <em>studio</em></h2>
+        <p class="book-compose__address">royalflutestudio@gmail.com</p>
+
+        <a class="book-compose__cta"
+           href="mailto:royalflutestudio@gmail.com?subject=Royal%20Flute%20Studio%20%E2%80%94%20Lesson%20Inquiry&amp;body=Hello%20Royal%20Flute%20Studio%2C%0A%0AI%27d%20like%20to%20enquire%20about%20lessons.%0A%0AStudent%27s%20name%20%26%20age%3A%0ACurrent%20playing%20level%3A%0APreferred%20days%2Ftimes%3A%0AGoals%3A%0AAnything%20else%3A%0A%0AThank%20you%2C">
+          Compose Email
+        </a>
+
+        <p class="book-compose__sep">or</p>
+
+        <a class="book-compose__phone" href="tel:+14086589050">(408) 658&#8209;9050</a>
+
+        <p class="book-compose__hours">We reply within forty-eight hours.</p>
       </div>
 
     </div>
@@ -336,7 +450,7 @@
     <div class="col-4 site-footer__col">
       <p class="eyebrow">Studio</p>
       <p class="site-footer__name">Royal Flute Studio</p>
-      <p class="site-footer__loc">San Jose, California</p>
+      <p class="site-footer__loc">Santa Clara, California</p>
     </div>
     <div class="col-4 site-footer__col site-footer__contact">
       <p class="eyebrow">Correspondence</p>
@@ -360,6 +474,17 @@
     &copy; <span id="year"></span> Royal Flute Studio
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://royal-flute-studio.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Book a Lesson", "item": "https://royal-flute-studio.com/book-online.html" }
+  ]
+}
+</script>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();

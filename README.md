@@ -39,7 +39,7 @@
 | 전화번호 | 4개 HTML 파일 | footer의 `tel:+14086589050` (4곳) |
 | 이메일 | 4개 HTML 파일 | footer의 `mailto:` (4곳) |
 | Facebook/Instagram | 4개 HTML 파일 | footer의 `<div class="socials">` (4곳) |
-| 가격 / 레슨 설명 | `info.html` | `.info-pricing__tier` 블록 |
+| 레슨 레벨 설명 | `info.html` | `.info-pricing__tier` 블록 (※ CSS 클래스 이름은 옛 명칭 유지) |
 | 강사 소개 본문 | `about-me.html` | `.about-article__body` 단락들 |
 | 예약 폼 (Google Form) | `book-online.html` | `<iframe src="...">` URL |
 | 사진 | `assets/` 폴더 | 같은 파일명으로 덮어쓰거나 HTML의 `<img src=...>` 경로 수정 |
