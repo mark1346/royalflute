@@ -3,87 +3,752 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Me — Royal Flute Studio</title>
-  <meta name="description" content="Rebecca Park is a Korean-Canadian flutist and private flute teacher based in the Bay Area. Trained at the Royal College of Music and Royal Academy of Music." />
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+  <title>Rebecca Park, Flutist — Royal Flute Studio · San Jose</title>
+  <meta name="description" content="Rebecca Park is a Korean-American flutist and private flute teacher based in San Jose. Trained at the Royal College of Music and Royal Academy of Music in London, with three performances on the Carnegie Hall stage." />
+  <link rel="canonical" href="https://royal-flute-studio.com/about-me.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Royal Flute Studio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://royal-flute-studio.com/about-me.html" />
+  <meta property="og:title" content="Rebecca Park, Flutist — Royal Flute Studio" />
+  <meta property="og:description" content="Rebecca Park is a Korean-American flutist and private flute teacher based in San Jose. Trained at the Royal College of Music and Royal Academy of Music in London, with three performances on the Carnegie Hall stage." />
+  <meta property="og:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
+  <meta property="og:image:alt" content="Rebecca Park, founder of Royal Flute Studio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rebecca Park, Flutist — Royal Flute Studio" />
+  <meta name="twitter:description" content="Rebecca Park is a Korean-American flutist and private flute teacher based in San Jose. Trained at the Royal College of Music and Royal Academy of Music in London, with three performances on the Carnegie Hall stage." />
+  <meta name="twitter:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,100..900,0..100&family=Italiana&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Page-specific: About Me ────────────────────────────── */
+
+    /* Hero — name on left, portrait on right (mirrored from Home) */
+    .about-hero {
+      padding-block: var(--s-8) var(--s-9);
+    }
+
+    .about-hero__grid {
+      align-items: end;
+      row-gap: var(--s-7);
+    }
+
+    .about-hero__intro {
+      grid-column: 1 / span 6;
+      padding-right: clamp(0px, 2vw, 1.5rem);
+    }
+
+    .about-hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-3);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+
+    .about-hero__eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .about-hero__name {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-hero);
+      font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+      line-height: var(--lh-hero);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0 0 var(--s-4);
+    }
+
+    .about-hero__name em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .about-hero__tagline {
+      font-family: var(--font-accent);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      letter-spacing: 0.02em;
+      color: var(--burgundy);
+      margin: 0 0 var(--s-5);
+    }
+
+    .about-hero__sub {
+      font-family: var(--font-body);
+      font-size: var(--t-meta);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .about-hero__sub span:not(:last-child)::after {
+      content: " · ";
+      color: var(--gold);
+      padding-inline: 0.4em;
+    }
+
+    .about-hero__portrait {
+      grid-column: 8 / span 5;
+      position: relative;
+      margin: 0;
+    }
+
+    .about-hero__portrait img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .about-hero__caption {
+      margin-top: var(--s-3);
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--hairline);
+      font-family: var(--font-body);
+      font-size: var(--t-meta);
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .about-hero__intro,
+      .about-hero__portrait { grid-column: 1 / -1; }
+      .about-hero__intro { padding-right: 0; order: 2; }
+      .about-hero__portrait { order: 1; }
+    }
+
+    /* ── Bio article ─────────────────────────────────────────── */
+
+    .about-article {
+      padding-block: var(--s-8) var(--s-9);
+      border-top: 1px solid var(--ink);
+    }
+
+    .about-article__head {
+      grid-column: 3 / span 8;
+      text-align: center;
+      margin-bottom: var(--s-7);
+    }
+
+    .about-article__kicker {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-3);
+    }
+
+    .about-article__head h2 {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h2);
+      font-size: var(--t-display);
+      line-height: var(--lh-display);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .about-article__head h2 em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .about-article__body {
+      grid-column: 3 / span 7;
+      font-size: var(--t-body);
+      line-height: var(--lh-body);
+      color: var(--ink-soft);
+    }
+
+    .about-article__body > p {
+      margin: 0 0 var(--s-5);
+    }
+
+    .about-article__body > p + p {
+      text-indent: 1.4em;
+    }
+
+    /* Drop cap: only the first paragraph; suppress indent */
+    .about-article__body > p.drop-cap {
+      text-indent: 0;
+    }
+
+    .about-article__pull {
+      grid-column: 2 / span 10;
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-pull);
+      font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+      line-height: 1.22;
+      letter-spacing: var(--tk-tight);
+      color: var(--burgundy);
+      font-style: italic;
+      text-align: center;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding-block: var(--s-7);
+      margin: var(--s-8) 0;
+    }
+
+    .about-article__pull em {
+      font-family: var(--font-accent);
+      font-style: normal;
+    }
+
+    .about-article__pull cite {
+      display: block;
+      margin-top: var(--s-4);
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .about-article__head,
+      .about-article__body,
+      .about-article__pull { grid-column: 1 / -1; }
+    }
+
+    /* ── Credentials (achievements) ──────────────────────────── */
+
+    .about-credits {
+      padding-block: var(--s-9);
+      background: var(--bg-surface);
+      border-top: 1px solid var(--ink);
+    }
+
+    .about-credits__head {
+      grid-column: 3 / span 8;
+      text-align: center;
+      margin-bottom: var(--s-8);
+    }
+
+    .about-credits__head h2 {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h2);
+      font-size: var(--t-display);
+      line-height: var(--lh-display);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .about-credits__head h2 em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .about-credits__block {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(12, var(--col));
+      column-gap: var(--gutter);
+      row-gap: 0;
+      padding-block: var(--s-6);
+      border-top: 1px solid var(--hairline);
+    }
+
+    .about-credits__block:last-of-type {
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .about-credits__category {
+      grid-column: 1 / span 3;
+      align-self: start;
+    }
+
+    .about-credits__roman {
+      font-family: var(--font-accent);
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin: 0 0 var(--s-2);
+    }
+
+    .about-credits__category h3 {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h3);
+      font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .about-credits__category h3 em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .about-credits__list {
+      grid-column: 5 / span 8;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-credits__entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: var(--s-3);
+      padding-block: var(--s-3);
+      border-bottom: 1px dotted rgba(28, 24, 23, 0.22);
+      font-family: var(--font-body);
+      font-size: var(--t-body-sm);
+      color: var(--ink-soft);
+    }
+
+    .about-credits__entry:last-child {
+      border-bottom: 0;
+    }
+
+    .about-credits__entry .accent {
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .about-credits__meta {
+      font-family: var(--font-accent);
+      font-size: var(--t-body-sm);
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .about-credits__inline {
+      grid-column: 5 / span 8;
+      font-family: var(--font-accent);
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      color: var(--burgundy);
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .about-credits__inline span:not(:last-child)::after {
+      content: "  ·  ";
+      color: var(--gold);
+      padding-inline: 0.25em;
+    }
+
+    @media (max-width: 880px) {
+      .about-credits__category,
+      .about-credits__list,
+      .about-credits__inline { grid-column: 1 / -1; }
+      .about-credits__category { margin-bottom: var(--s-4); }
+    }
+
+    /* ── Closing CTA ─────────────────────────────────────────── */
+
+    .about-cta {
+      padding-block: var(--s-9);
+      text-align: center;
+      border-top: 1px solid var(--ink);
+    }
+
+    .about-cta__inner {
+      grid-column: 3 / span 8;
+    }
+
+    .about-cta__kicker {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-3);
+    }
+
+    .about-cta h2 {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h2);
+      font-size: var(--t-display);
+      line-height: var(--lh-display);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0 0 var(--s-6);
+    }
+
+    .about-cta h2 em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .about-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+      padding: var(--s-3) var(--s-6);
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      transition: background var(--dur-fast) var(--ease-editorial),
+                  color var(--dur-fast) var(--ease-editorial);
+    }
+
+    .about-cta a::after {
+      content: "→";
+      font-family: var(--font-accent);
+      color: var(--gold);
+      transition: transform var(--dur-med) var(--ease-stately);
+    }
+
+    .about-cta a:hover {
+      background: var(--ink);
+      color: var(--bg-ivory);
+    }
+
+    .about-cta a:hover::after {
+      color: var(--gold-soft);
+      transform: translateX(6px);
+    }
+
+    @media (max-width: 880px) {
+      .about-cta__inner { grid-column: 1 / -1; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rebecca Park",
+    "jobTitle": "Flutist and Private Flute Teacher",
+    "description": "Korean-American flutist trained at the Royal Academy of Music and Royal College of Music in London, with three performances on the Carnegie Hall stage.",
+    "image": "https://royal-flute-studio.com/assets/teacher-portrait.jpeg",
+    "url": "https://royal-flute-studio.com/about-me.html",
+    "nationality": ["American", "Canadian"],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Royal College of Music", "sameAs": "https://www.rcm.ac.uk/" },
+      { "@type": "CollegeOrUniversity", "name": "Royal Academy of Music", "sameAs": "https://www.ram.ac.uk/" }
+    ],
+    "knowsAbout": ["Flute", "Classical Music", "Music Education", "Chamber Music"],
+    "worksFor": {
+      "@type": "MusicSchool",
+      "name": "Royal Flute Studio",
+      "url": "https://royal-flute-studio.com/"
+    },
+    "sameAs": [
+      "https://www.facebook.com/royalflute",
+      "https://www.instagram.com/royalflutestudio/"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://royal-flute-studio.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://royal-flute-studio.com/about-me.html" }
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.jpeg" alt="Royal Flute Studio logo" />
-      <span class="brand__name">Royal Flute Studio</span>
-    </a>
-    <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">&#9776;</button>
-    <ul class="nav" id="primary-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="info.html">Info</a></li>
-      <li><a href="about-me.html" aria-current="page">About Me</a></li>
-      <li><a href="book-online.html">Book Online</a></li>
-    </ul>
-  </div>
+<!-- ──────── Masthead ──────── -->
+<header class="masthead">
+  <p class="masthead__locale">
+    <span>San Jose</span><span>California</span><span>Established 2018</span>
+  </p>
+  <p class="masthead__wordmark"><a href="index.html">Royal Flute Studio</a></p>
+  <nav class="masthead__nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="info.html">Info</a>
+    <a href="about-me.html" aria-current="page">About</a>
+    <a href="book-online.html">Book</a>
+  </nav>
 </header>
 
 <main>
-  <section class="section">
-    <h2 class="section__title">Teacher Profile</h2>
-    <div class="section__rule" aria-hidden="true"></div>
-    <div class="bio">
-      <img src="assets/teacher-portrait.jpeg" alt="Rebecca Park, flutist and teacher" />
-      <div>
-        <p>Rebecca Park is a highly accomplished Korean-Canadian flutist and esteemed private teacher based in the Bay Area. Throughout her illustrious musical career, she has demonstrated exceptional talent and dedication through active participation in numerous competitions, ensembles, and performances.</p>
 
-        <p>Rebecca&rsquo;s journey as a competitor began when she emerged as one of the seven finalists at the prestigious Music Teachers National Association competition held in Las Vegas. This achievement propelled her towards further success, securing placements in a remarkable total of eleven international competitions. Her triumphs extend to various American competitions as well, including the YoungArts Foundation Competition, the Great Composers Competition, Salzburg Grand Prize Virtuoso Competition, Enkor International Competition, Salut International Competition in Italy, and most recently, the National Flute Association Masterclass Competition.</p>
+  <!-- ──────── Hero ──────── -->
+  <section class="about-hero">
+    <div class="grid about-hero__grid">
 
-        <p>In addition to her remarkable accomplishments on the competition stage, Rebecca has captivated audiences as an active performer. Notably, she has had the privilege of performing in Carnegie Hall&rsquo;s renowned stage three times. Her first flute-piano collaboration in the hall was at the age of fifteen. Furthermore, Rebecca has had invaluable opportunities to refine her artistry through participation in masterclasses led by distinguished artists such as William Bennett, Emily Beynon, Lorna McGhee, Jim Walker, and Leone Buyse.</p>
+      <div class="about-hero__intro reveal reveal-1">
+        <p class="about-hero__eyebrow">Profile · No. II</p>
+        <h1 class="about-hero__name">Rebecca <em>Park</em></h1>
+        <p class="about-hero__tagline">Flutist &amp; Educator.</p>
+        <p class="about-hero__sub">
+          <span>Korean-American</span><span>Based in San Jose</span><span>Bay Area</span>
+        </p>
+      </div>
 
-        <p>As a collaborative musician, Rebecca has contributed her talents to five distinct chamber groups throughout her career. A recent highlight includes a captivating performance at St. James&rsquo; Church in London alongside a flute-harp-viola trio. Additionally recognized as an orchestral player, Rebecca&rsquo;s involvement spans esteemed ensembles such as the Royal College of Music Symphony Orchestra (RCM), RCM Philharmonic Orchestra, Royal Academy of Music Symphony Orchestra (RAM), RAM Manson Ensemble, and RAM Symphonic Wind.</p>
+      <figure class="about-hero__portrait reveal reveal-2">
+        <img src="assets/teacher-portrait.jpeg" alt="Portrait of Rebecca Park, founder and instructor of Royal Flute Studio" width="933" height="1400" loading="eager" fetchpriority="high" decoding="async" />
+        <figcaption class="about-hero__caption">Rebecca Park, photographed for Royal Flute Studio.</figcaption>
+      </figure>
 
-        <p>Rebecca pursued advanced studies under acclaimed mentors Gitte Marcusson, Adam Walker, Stewart McIlwham, and Dimis Demetriades at the Royal College of Music while earning her Master of Performance degree. Her formative years were enriched by guidance from notable teachers including Kate Hill and Helen Keen while pursuing her Bachelor&rsquo;s Degree at the Royal Academy of Music. She has also studied privately with Dr. Nancy Andrew.</p>
+    </div>
+  </section>
+
+  <!-- ──────── Bio article ──────── -->
+  <section class="about-article reveal reveal-3">
+    <div class="grid">
+
+      <header class="about-article__head">
+        <p class="about-article__kicker">— Biography —</p>
+        <h2>A flutist&rsquo;s <em>journey</em></h2>
+      </header>
+
+      <div class="about-article__body">
+
+        <p class="drop-cap">
+          <span class="accent">Rebecca Park</span> is a highly accomplished Korean-American flutist and esteemed
+          private teacher based in the Bay Area. Throughout her illustrious musical career, she has demonstrated
+          exceptional talent and dedication through active participation in numerous competitions, ensembles,
+          and performances.
+        </p>
+
+        <p>
+          Rebecca&rsquo;s journey as a competitor began when she emerged as one of the seven finalists at the
+          prestigious <span class="kw">Music Teachers National Association</span> competition held in Las Vegas.
+          This achievement propelled her towards further success, securing placements in a remarkable total of
+          eleven international competitions. Her triumphs extend to various American competitions as well,
+          including the YoungArts Foundation Competition, the Great Composers Competition, Salzburg Grand Prize
+          Virtuoso Competition, Enkor International Competition, Salut International Competition in Italy, and
+          most recently, the National Flute Association Masterclass Competition.
+        </p>
+
+      </div>
+
+      <blockquote class="about-article__pull">
+        Three times on the <em>Carnegie Hall</em> stage &mdash; her first flute&hairsp;&ndash;&hairsp;piano collaboration there at the age of fifteen.
+        <cite>From the studio biography</cite>
+      </blockquote>
+
+      <div class="about-article__body">
+
+        <p>
+          In addition to her remarkable accomplishments on the competition stage, Rebecca has captivated
+          audiences as an active performer. Notably, she has had the privilege of performing on
+          <span class="kw">Carnegie Hall</span>&rsquo;s renowned stage three times. Her first flute-piano
+          collaboration in the hall was at the age of fifteen. Furthermore, Rebecca has had invaluable
+          opportunities to refine her artistry through participation in masterclasses led by distinguished
+          artists such as <span class="accent">William Bennett</span>,
+          <span class="accent">Emily Beynon</span>,
+          <span class="accent">Lorna McGhee</span>,
+          <span class="accent">Jim Walker</span>, and
+          <span class="accent">Leone Buyse</span>.
+        </p>
+
+        <p>
+          As a collaborative musician, Rebecca has contributed her talents to five distinct chamber groups
+          throughout her career. A recent highlight includes a captivating performance at St. James&rsquo;
+          Church in London alongside a flute-harp-viola trio. Additionally recognized as an orchestral player,
+          Rebecca&rsquo;s involvement spans esteemed ensembles such as the Royal College of Music Symphony
+          Orchestra (RCM), RCM Philharmonic Orchestra, Royal Academy of Music Symphony Orchestra (RAM), RAM
+          Manson Ensemble, and RAM Symphonic Wind.
+        </p>
+
+        <p>
+          Rebecca pursued advanced studies under acclaimed mentors
+          <span class="accent">Gitte Marcusson</span>, <span class="accent">Adam Walker</span>,
+          <span class="accent">Stewart McIlwham</span>, and <span class="accent">Dimis Demetriades</span> at
+          the <span class="kw">Royal College of Music</span> while earning her Master of Performance degree.
+          Her formative years were enriched by guidance from notable teachers including
+          <span class="accent">Kate Hill</span> and <span class="accent">Helen Keen</span> while pursuing her
+          Bachelor&rsquo;s Degree at the <span class="kw">Royal Academy of Music</span>. She has also studied
+          privately with <span class="accent">Dr.&nbsp;Nancy&nbsp;Andrew</span>.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────── Credentials ──────── -->
+  <section class="about-credits reveal reveal-4">
+    <div class="grid">
+
+      <header class="about-credits__head">
+        <p class="about-article__kicker">— A Concert Programme —</p>
+        <h2>Selected <em>credentials</em></h2>
+      </header>
+
+      <!-- I. Conservatory -->
+      <div class="about-credits__block">
+        <div class="about-credits__category">
+          <p class="about-credits__roman">I</p>
+          <h3><em>Conservatory</em></h3>
+        </div>
+        <ul class="about-credits__list">
+          <li class="about-credits__entry">
+            <span><span class="accent">Royal College of Music</span> &nbsp;·&nbsp; Master of Performance</span>
+            <span class="about-credits__meta">London</span>
+          </li>
+          <li class="about-credits__entry">
+            <span><span class="accent">Royal Academy of Music</span> &nbsp;·&nbsp; Bachelor of Music</span>
+            <span class="about-credits__meta">London</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>Private Study &nbsp;·&nbsp; <span class="accent">Dr.&nbsp;Nancy&nbsp;Andrew</span></span>
+            <span class="about-credits__meta">—</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- II. Engagements -->
+      <div class="about-credits__block">
+        <div class="about-credits__category">
+          <p class="about-credits__roman">II</p>
+          <h3>Notable <em>Engagements</em></h3>
+        </div>
+        <ul class="about-credits__list">
+          <li class="about-credits__entry">
+            <span><span class="accent">Carnegie Hall</span>, New York</span>
+            <span class="about-credits__meta">Three performances</span>
+          </li>
+          <li class="about-credits__entry">
+            <span><span class="accent">St. James&rsquo; Church</span>, London &nbsp;·&nbsp; Flute &middot; Harp &middot; Viola Trio</span>
+            <span class="about-credits__meta">Recital</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>Royal College of Music Symphony Orchestra &nbsp;·&nbsp; RCM Philharmonic</span>
+            <span class="about-credits__meta">Member</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>Royal Academy of Music Symphony Orchestra &nbsp;·&nbsp; RAM Manson Ensemble &nbsp;·&nbsp; RAM Symphonic Wind</span>
+            <span class="about-credits__meta">Member</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- III. Distinctions -->
+      <div class="about-credits__block">
+        <div class="about-credits__category">
+          <p class="about-credits__roman">III</p>
+          <h3><em>Distinctions</em></h3>
+        </div>
+        <ul class="about-credits__list">
+          <li class="about-credits__entry">
+            <span><span class="accent">Music Teachers National Association</span> &nbsp;·&nbsp; Finalist</span>
+            <span class="about-credits__meta">Las Vegas</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>YoungArts Foundation Competition</span>
+            <span class="about-credits__meta">U.S.A.</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>Salzburg Grand Prize Virtuoso Competition</span>
+            <span class="about-credits__meta">Austria</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>Great Composers Competition &nbsp;·&nbsp; Enkor International</span>
+            <span class="about-credits__meta">International</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>Salut International Competition</span>
+            <span class="about-credits__meta">Italy</span>
+          </li>
+          <li class="about-credits__entry">
+            <span>National Flute Association Masterclass Competition</span>
+            <span class="about-credits__meta">U.S.A.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- IV. Masterclasses -->
+      <div class="about-credits__block">
+        <div class="about-credits__category">
+          <p class="about-credits__roman">IV</p>
+          <h3><em>Masterclasses</em></h3>
+        </div>
+        <p class="about-credits__inline">
+          <span>William Bennett</span><span>Emily Beynon</span><span>Lorna McGhee</span><span>Jim Walker</span><span>Leone Buyse</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────── Closing CTA ──────── -->
+  <section class="about-cta reveal reveal-5">
+    <div class="grid">
+      <div class="about-cta__inner">
+        <p class="about-cta__kicker">— Continue —</p>
+        <h2>Schedule a <em>lesson</em></h2>
+        <a href="book-online.html">Book a Time</a>
       </div>
     </div>
   </section>
+
 </main>
 
+<!-- ──────── Footer ──────── -->
 <footer class="site-footer">
-  <div class="site-footer__inner">
-    <div>
-      <h4>Phone</h4>
-      <p><a href="tel:+14086589050">(408)&nbsp;658&#8209;9050</a></p>
+  <div class="grid site-footer__grid">
+    <div class="col-4 site-footer__col">
+      <p class="eyebrow">Studio</p>
+      <p class="site-footer__name">Royal Flute Studio</p>
+      <p class="site-footer__loc">San Jose, California</p>
     </div>
-    <div>
-      <h4>Email</h4>
-      <p><a href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a></p>
+    <div class="col-4 site-footer__col site-footer__contact">
+      <p class="eyebrow">Correspondence</p>
+      <a href="tel:+14086589050">(408) 658&#8209;9050</a>
+      <a href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a>
     </div>
-    <div>
-      <h4>Follow</h4>
+    <div class="col-4 site-footer__col">
+      <p class="eyebrow">Follow</p>
       <div class="socials">
         <a href="https://www.facebook.com/royalflute" aria-label="Facebook" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7v3.1h2.8V22H13z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7v3.1h2.8V22H13z"/></svg>
         </a>
         <a href="https://www.instagram.com/royalflutestudio/" aria-label="Instagram" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.7.9 1 1.5.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.7-1.5 1-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.7-.9-1-1.5-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.7 1.5-1 .4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.7.9 1 1.5.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.7-1.5 1-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.7-.9-1-1.5-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.7 1.5-1 .4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
         </a>
       </div>
     </div>
   </div>
-  <p class="site-footer__bottom">&copy; <span id="year"></span> Royal Flute Studio. All rights reserved.</p>
+
+  <div class="site-footer__bottom">
+    &copy; <span id="year"></span> Royal Flute Studio
+  </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.getElementById('primary-nav');
-  toggle && toggle.addEventListener('click', function () {
-    var open = nav.dataset.open === 'true';
-    nav.dataset.open = String(!open);
-    toggle.setAttribute('aria-expanded', String(!open));
-  });
 </script>
 
 </body>

@@ -3,112 +3,519 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Royal Flute Studio — Private Flute Lessons in San Jose</title>
-  <meta name="description" content="Royal Flute Studio offers private flute lessons in San Jose for beginner, intermediate, and advanced students. Taught by Rebecca Park, an internationally accomplished flutist." />
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+  <title>Royal Flute Studio — Private Flute Instruction · San Jose</title>
+  <meta name="description" content="A private flute studio in San Jose, founded by Rebecca Park, a flutist trained at the Royal Academy of Music and Royal College of Music in London — with three performances on the Carnegie Hall stage." />
+  <link rel="canonical" href="https://royal-flute-studio.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Royal Flute Studio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://royal-flute-studio.com/" />
+  <meta property="og:title" content="Royal Flute Studio — Private Flute Instruction in San Jose" />
+  <meta property="og:description" content="A private flute studio in San Jose, founded by Rebecca Park, a flutist trained at the Royal Academy of Music and Royal College of Music in London — with three performances on the Carnegie Hall stage." />
+  <meta property="og:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
+  <meta property="og:image:alt" content="Rebecca Park, founder of Royal Flute Studio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Royal Flute Studio — Private Flute Instruction in San Jose" />
+  <meta name="twitter:description" content="A private flute studio in San Jose, founded by Rebecca Park, a flutist trained at the Royal Academy of Music and Royal College of Music in London — with three performances on the Carnegie Hall stage." />
+  <meta name="twitter:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,100..900,0..100&family=Italiana&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+
+  <link rel="preload" as="image" href="assets/teacher-portrait.jpeg" fetchpriority="high" />
+  <link rel="stylesheet" href="design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Page-specific: Home ─────────────────────────────────── */
+
+    .home-hero {
+      padding-top: var(--s-8);
+      padding-bottom: var(--s-9);
+    }
+
+    .home-hero__grid {
+      align-items: center;
+      row-gap: var(--s-7);
+    }
+
+    .home-hero__portrait {
+      position: relative;
+      margin: 0;
+    }
+
+    .home-hero__portrait img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .home-hero__portrait figcaption {
+      margin-top: var(--s-3);
+      padding-top: var(--s-3);
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--s-3);
+    }
+
+    .home-hero__portrait .accent {
+      font-size: 1.15rem;
+      color: var(--ink);
+    }
+
+    .home-hero__portrait .role {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .home-hero__text {
+      padding-left: clamp(0px, 2vw, 1.5rem);
+    }
+
+    .home-hero__title {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-hero);
+      font-size: var(--t-hero);
+      line-height: var(--lh-hero);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: var(--s-4) 0 var(--s-3);
+    }
+
+    .home-hero__title em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .home-hero__tagline {
+      font-family: var(--font-accent);
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      letter-spacing: 0.02em;
+      color: var(--burgundy);
+      margin: 0 0 var(--s-6);
+    }
+
+    .home-hero__lede {
+      max-width: 38em;
+      font-size: var(--t-body);
+      color: var(--ink-soft);
+      margin: 0 0 var(--s-6);
+    }
+
+    .home-hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--ink);
+      transition: color var(--dur-fast) var(--ease-editorial),
+                  border-color var(--dur-fast) var(--ease-editorial),
+                  letter-spacing var(--dur-med) var(--ease-stately);
+    }
+
+    .home-hero__cta::after {
+      content: "→";
+      font-family: var(--font-accent);
+      font-size: 1rem;
+      color: var(--gold);
+      transition: transform var(--dur-med) var(--ease-stately);
+    }
+
+    .home-hero__cta:hover {
+      color: var(--burgundy);
+      border-color: var(--burgundy);
+      letter-spacing: calc(var(--tk-eyebrow) + 0.02em);
+    }
+
+    .home-hero__cta:hover::after {
+      transform: translateX(6px);
+    }
+
+    /* Asymmetric hero columns */
+    .home-hero .col-portrait { grid-column: 1 / span 5; }
+    .home-hero .col-text     { grid-column: 7 / span 6; }
+
+    @media (max-width: 880px) {
+      .home-hero .col-portrait,
+      .home-hero .col-text { grid-column: 1 / -1; }
+      .home-hero__text { padding-left: 0; }
+    }
+
+    /* ── Feature pull quote ──────────────────────────────────── */
+
+    .home-feature {
+      padding-block: var(--s-9);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      background: var(--bg-surface);
+    }
+
+    .home-feature__quote {
+      grid-column: 3 / span 8;
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-pull);
+      font-size: clamp(1.7rem, 3.3vw, 2.6rem);
+      line-height: 1.22;
+      letter-spacing: var(--tk-tight);
+      color: var(--burgundy);
+      font-style: italic;
+      text-align: center;
+      margin: 0;
+    }
+
+    .home-feature__quote::before,
+    .home-feature__quote::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto var(--s-5);
+    }
+
+    .home-feature__quote::after {
+      margin: var(--s-5) auto 0;
+    }
+
+    .home-feature__cite {
+      display: block;
+      margin-top: var(--s-5);
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .home-feature__quote { grid-column: 1 / -1; }
+    }
+
+    /* ── In This Edition (table of contents) ─────────────────── */
+
+    .home-contents {
+      padding-block: var(--s-9);
+    }
+
+    .home-contents__head {
+      grid-column: 3 / span 8;
+      text-align: center;
+      margin-bottom: var(--s-8);
+    }
+
+    .home-contents__kicker {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-3);
+    }
+
+    .home-contents__title {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h2);
+      font-size: var(--t-display);
+      line-height: var(--lh-display);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .home-contents__title em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .home-contents__list {
+      grid-column: 3 / span 8;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--ink);
+    }
+
+    .home-contents__row {
+      display: grid;
+      grid-template-columns: 3.5rem 1fr auto;
+      align-items: baseline;
+      gap: var(--s-5);
+      padding-block: var(--s-5);
+      border-bottom: 1px solid var(--hairline);
+      color: var(--ink);
+      transition: padding var(--dur-med) var(--ease-stately),
+                  color var(--dur-fast) var(--ease-editorial);
+      position: relative;
+    }
+
+    .home-contents__row::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform var(--dur-med) var(--ease-stately);
+    }
+
+    .home-contents__row:hover {
+      padding-left: var(--s-4);
+      color: var(--burgundy);
+    }
+
+    .home-contents__row:hover::before {
+      transform: scaleX(1);
+    }
+
+    .home-contents__num {
+      font-family: var(--font-accent);
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+
+    .home-contents__name {
+      font-family: var(--font-display);
+      font-variation-settings: "opsz" 36, "SOFT" 50, "wght" 420;
+      font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+      letter-spacing: -0.005em;
+      line-height: 1.2;
+    }
+
+    .home-contents__name em {
+      font-style: italic;
+      font-family: var(--font-accent);
+      font-weight: 400;
+    }
+
+    .home-contents__meta {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      transition: color var(--dur-fast) var(--ease-editorial);
+    }
+
+    .home-contents__meta::after {
+      content: "→";
+      font-family: var(--font-accent);
+      color: var(--gold);
+      font-size: 1rem;
+      transition: transform var(--dur-med) var(--ease-stately);
+    }
+
+    .home-contents__row:hover .home-contents__meta {
+      color: var(--burgundy);
+    }
+
+    .home-contents__row:hover .home-contents__meta::after {
+      transform: translateX(6px);
+    }
+
+    @media (max-width: 880px) {
+      .home-contents__head,
+      .home-contents__list { grid-column: 1 / -1; }
+
+      .home-contents__row {
+        grid-template-columns: 2.5rem 1fr;
+        grid-template-rows: auto auto;
+        row-gap: var(--s-2);
+      }
+
+      .home-contents__meta { grid-column: 2; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicSchool",
+    "name": "Royal Flute Studio",
+    "alternateName": "Royal Flute Studio · San Jose",
+    "description": "A private flute studio in San Jose offering instruction from foundational lessons to advanced auditions and competition.",
+    "url": "https://royal-flute-studio.com/",
+    "logo": "https://royal-flute-studio.com/assets/logo.jpeg",
+    "image": "https://royal-flute-studio.com/assets/teacher-portrait.jpeg",
+    "telephone": "+1-408-658-9050",
+    "email": "royalflutestudio@gmail.com",
+    "priceRange": "By enquiry",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "areaServed": { "@type": "Place", "name": "San Francisco Bay Area" },
+    "founder": {
+      "@type": "Person",
+      "name": "Rebecca Park",
+      "url": "https://royal-flute-studio.com/about-me.html"
+    },
+    "sameAs": [
+      "https://www.facebook.com/royalflute",
+      "https://www.instagram.com/royalflutestudio/"
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.jpeg" alt="Royal Flute Studio logo" />
-      <span class="brand__name">Royal Flute Studio</span>
-    </a>
-    <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">&#9776;</button>
-    <ul class="nav" id="primary-nav">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="info.html">Info</a></li>
-      <li><a href="about-me.html">About Me</a></li>
-      <li><a href="book-online.html">Book Online</a></li>
-    </ul>
-  </div>
+<!-- ──────── Masthead ──────── -->
+<header class="masthead">
+  <p class="masthead__locale">
+    <span>San Jose</span><span>California</span><span>Established 2018</span>
+  </p>
+  <p class="masthead__wordmark"><a href="index.html">Royal Flute Studio</a></p>
+  <nav class="masthead__nav" aria-label="Primary">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="info.html">Info</a>
+    <a href="about-me.html">About</a>
+    <a href="book-online.html">Book</a>
+  </nav>
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="hero" aria-label="Royal Flute Studio">
-    <div class="hero__copy">
-      <h1 class="hero__title">Royal Flute Studio</h1>
-      <div class="hero__rule" aria-hidden="true"></div>
-      <p class="hero__tagline">Private Flute Lessons in San Jose</p>
-    </div>
-    <div class="hero__image" role="img" aria-label="Flute"
-         style="background-image:url('assets/home-flute.jpg');"></div>
-  </section>
 
-  <!-- Information -->
-  <section class="row-section">
-    <div class="row-section__inner">
-      <img class="row-section__image" src="assets/home-flute-player.jpg" alt="Flutist performing on stage" />
-      <div>
-        <p class="row-section__eyebrow">01 &nbsp;&mdash;&nbsp; Information</p>
-        <h2 class="row-section__title">Lesson Philosophy &amp; Pricing</h2>
-        <p class="row-section__body">Customized one-on-one lessons that recognize each student&rsquo;s unique strengths, weaknesses, and learning style &mdash; from first notes to advanced repertoire.</p>
-        <a class="btn" href="info.html">Learn More</a>
+  <!-- ──────── Hero ──────── -->
+  <section class="home-hero">
+    <div class="grid home-hero__grid">
+
+      <figure class="home-hero__portrait col-portrait reveal reveal-1">
+        <img src="assets/teacher-portrait.jpeg" alt="Rebecca Park, flutist and founder of Royal Flute Studio, photographed in studio" width="933" height="1400" loading="eager" fetchpriority="high" decoding="async" />
+        <figcaption>
+          <span class="accent">Rebecca Park</span>
+          <span class="role">Founder · Instructor</span>
+        </figcaption>
+      </figure>
+
+      <div class="home-hero__text col-text reveal reveal-2">
+        <p class="eyebrow">A Private Flute Atelier</p>
+        <h1 class="home-hero__title">Royal Flute <em>Studio</em></h1>
+        <p class="home-hero__tagline">Where conservatory craft meets the next generation.</p>
+        <p class="home-hero__lede">
+          Founded by flutist <span class="accent">Rebecca Park</span> &mdash; trained at the
+          <span class="kw">Royal Academy of Music</span> and <span class="kw">Royal College of Music</span>
+          in London, with three engagements on the <span class="kw">Carnegie Hall</span> stage &mdash;
+          the studio offers private instruction for students at every stage, from the very first note
+          to advanced auditions and competition.
+        </p>
+        <a class="home-hero__cta" href="about-me.html">Read the Teacher&rsquo;s Bio</a>
       </div>
+
     </div>
   </section>
 
-  <!-- About Me -->
-  <section class="row-section row-section--alt row-section--flipped">
-    <div class="row-section__inner">
-      <img class="row-section__image" src="assets/home-wall.jpg" alt="Studio interior wall" />
-      <div>
-        <p class="row-section__eyebrow">02 &nbsp;&mdash;&nbsp; About Me</p>
-        <h2 class="row-section__title">Teacher Bio</h2>
-        <p class="row-section__body">Rebecca Park is a Korean-Canadian flutist trained at the Royal College of Music and Royal Academy of Music in London, with performances at Carnegie Hall and finalists honors at international competitions.</p>
-        <a class="btn" href="about-me.html">Learn More</a>
-      </div>
+  <!-- ──────── Feature pull quote ──────── -->
+  <section class="home-feature reveal reveal-3">
+    <div class="grid">
+      <blockquote class="home-feature__quote">
+        From the <em>Royal Academy of Music</em> to the <em>Carnegie Hall</em> stage &mdash; now teaching the next chapter in San&nbsp;Jose.
+        <cite class="home-feature__cite">Rebecca Park · Royal Flute Studio</cite>
+      </blockquote>
     </div>
   </section>
 
-  <!-- Make a Booking — centered CTA -->
-  <section class="cta-strip">
-    <p class="cta-strip__eyebrow">03 &nbsp;&mdash;&nbsp; Make a Booking</p>
-    <h2 class="cta-strip__title">Ready to start playing?</h2>
-    <a class="btn btn--solid" href="book-online.html">Book Now</a>
+  <!-- ──────── Contents ──────── -->
+  <section class="home-contents reveal reveal-4">
+    <div class="grid">
+      <header class="home-contents__head">
+        <p class="home-contents__kicker">— Contents —</p>
+        <h2 class="home-contents__title">In <em>this</em> edition</h2>
+      </header>
+
+      <ol class="home-contents__list">
+        <li>
+          <a class="home-contents__row" href="info.html">
+            <span class="home-contents__num">I</span>
+            <span class="home-contents__name">Lesson Philosophy &amp; <em>Pricing</em></span>
+            <span class="home-contents__meta">Info</span>
+          </a>
+        </li>
+        <li>
+          <a class="home-contents__row" href="about-me.html">
+            <span class="home-contents__num">II</span>
+            <span class="home-contents__name">The Teacher &mdash; A <em>Profile</em></span>
+            <span class="home-contents__meta">About</span>
+          </a>
+        </li>
+        <li>
+          <a class="home-contents__row" href="book-online.html">
+            <span class="home-contents__num">III</span>
+            <span class="home-contents__name">To Schedule a <em>Lesson</em></span>
+            <span class="home-contents__meta">Book</span>
+          </a>
+        </li>
+      </ol>
+    </div>
   </section>
+
 </main>
 
+<!-- ──────── Footer ──────── -->
 <footer class="site-footer">
-  <div class="site-footer__inner">
-    <div>
-      <h4>Phone</h4>
-      <p><a href="tel:+14086589050">(408)&nbsp;658&#8209;9050</a></p>
+  <div class="grid site-footer__grid">
+    <div class="col-4 site-footer__col">
+      <p class="eyebrow">Studio</p>
+      <p class="site-footer__name">Royal Flute Studio</p>
+      <p class="site-footer__loc">San Jose, California</p>
     </div>
-    <div>
-      <h4>Email</h4>
-      <p><a href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a></p>
+    <div class="col-4 site-footer__col site-footer__contact">
+      <p class="eyebrow">Correspondence</p>
+      <a href="tel:+14086589050">(408) 658&#8209;9050</a>
+      <a href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a>
     </div>
-    <div>
-      <h4>Follow</h4>
+    <div class="col-4 site-footer__col">
+      <p class="eyebrow">Follow</p>
       <div class="socials">
         <a href="https://www.facebook.com/royalflute" aria-label="Facebook" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7v3.1h2.8V22H13z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7v3.1h2.8V22H13z"/></svg>
         </a>
         <a href="https://www.instagram.com/royalflutestudio/" aria-label="Instagram" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.7.9 1 1.5.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.7-1.5 1-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.7-.9-1-1.5-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.7 1.5-1 .4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.7.9 1 1.5.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.7-1.5 1-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.7-.9-1-1.5-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.7 1.5-1 .4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
         </a>
       </div>
     </div>
   </div>
-  <p class="site-footer__bottom">&copy; <span id="year"></span> Royal Flute Studio</p>
+
+  <div class="site-footer__bottom">
+    &copy; <span id="year"></span> Royal Flute Studio
+  </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.getElementById('primary-nav');
-  toggle && toggle.addEventListener('click', function () {
-    var open = nav.dataset.open === 'true';
-    nav.dataset.open = String(!open);
-    toggle.setAttribute('aria-expanded', String(!open));
-  });
 </script>
 
 </body>

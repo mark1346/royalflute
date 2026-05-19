@@ -3,85 +3,364 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book Online — Royal Flute Studio</title>
-  <meta name="description" content="Book a flute lesson or trial at Royal Flute Studio. Fill out the form and we will be in touch shortly." />
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+  <title>Book a Lesson — Royal Flute Studio · San Jose</title>
+  <meta name="description" content="Reserve a private flute lesson in San Jose at Royal Flute Studio. Trial lessons are offered at the beginner rate. We respond within forty-eight hours." />
+  <link rel="canonical" href="https://royal-flute-studio.com/book-online.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Royal Flute Studio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://royal-flute-studio.com/book-online.html" />
+  <meta property="og:title" content="Book a Lesson — Royal Flute Studio" />
+  <meta property="og:description" content="Reserve a private flute lesson in San Jose at Royal Flute Studio. Trial lessons are offered at the beginner rate. We respond within forty-eight hours." />
+  <meta property="og:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
+  <meta property="og:image:alt" content="Rebecca Park, founder of Royal Flute Studio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book a Lesson — Royal Flute Studio" />
+  <meta name="twitter:description" content="Reserve a private flute lesson in San Jose at Royal Flute Studio. Trial lessons are offered at the beginner rate. We respond within forty-eight hours." />
+  <meta name="twitter:image" content="https://royal-flute-studio.com/assets/teacher-portrait.jpeg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,100..900,0..100&family=Italiana&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Page-specific: Book Online ─────────────────────────── */
+
+    .book-opener {
+      padding-block: var(--s-9) var(--s-8);
+      text-align: center;
+    }
+
+    .book-opener__inner { grid-column: 3 / span 8; }
+
+    .book-opener__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-4);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .book-opener__eyebrow::before,
+    .book-opener__eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .book-opener__title {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: var(--lh-display);
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0 0 var(--s-4);
+    }
+
+    .book-opener__title em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .book-opener__lede {
+      font-family: var(--font-accent);
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      letter-spacing: 0.02em;
+      color: var(--burgundy);
+      margin: 0;
+    }
+
+    @media (max-width: 880px) {
+      .book-opener__inner { grid-column: 1 / -1; }
+    }
+
+    /* ── Body: sidebar + form ───────────────────────────────── */
+
+    .book-body {
+      padding-block: var(--s-7) var(--s-9);
+      border-top: 1px solid var(--ink);
+    }
+
+    .book-aside {
+      grid-column: 1 / span 4;
+      align-self: start;
+      position: sticky;
+      top: 200px;
+    }
+
+    .book-aside__kicker {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 var(--s-3);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .book-aside__kicker::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .book-aside h3 {
+      font-family: var(--font-display);
+      font-variation-settings: var(--fr-h3);
+      font-size: clamp(1.6rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: var(--tk-tight);
+      color: var(--ink);
+      margin: 0 0 var(--s-4);
+    }
+
+    .book-aside h3 em {
+      font-style: normal;
+      font-family: var(--font-accent);
+      color: var(--burgundy);
+    }
+
+    .book-aside__copy {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: var(--lh-body);
+      color: var(--ink-soft);
+      margin: 0 0 var(--s-6);
+    }
+
+    .book-aside__rule {
+      height: 1px;
+      background: var(--hairline);
+      width: 100%;
+      margin: var(--s-6) 0;
+    }
+
+    .book-aside__heading {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 var(--s-3);
+    }
+
+    .book-aside__contact {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      font-family: var(--font-body);
+      font-size: 1rem;
+    }
+
+    .book-aside__contact a { color: var(--ink); }
+
+    .book-aside__note {
+      font-family: var(--font-accent);
+      font-style: normal;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .book-aside__note::before {
+      content: "*  ";
+      color: var(--gold);
+    }
+
+    /* Form column */
+    .book-form { grid-column: 6 / span 7; }
+
+    .book-form__caption {
+      font-family: var(--font-accent);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin: 0 0 var(--s-4);
+      padding-bottom: var(--s-3);
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--s-3);
+      flex-wrap: wrap;
+    }
+
+    .book-form__caption span:last-child {
+      font-family: var(--font-body);
+      font-size: var(--t-eyebrow);
+      font-weight: 500;
+      letter-spacing: var(--tk-eyebrow);
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .book-form__frame {
+      border: 1px solid var(--ink);
+      background: var(--bg-ivory);
+      padding: var(--s-3);
+    }
+
+    .book-form__frame iframe {
+      width: 100%;
+      min-height: 1280px;
+      border: 0;
+      display: block;
+    }
+
+    @media (max-width: 880px) {
+      .book-aside,
+      .book-form { grid-column: 1 / -1; }
+
+      .book-aside {
+        position: static;
+        margin-bottom: var(--s-7);
+        padding-bottom: var(--s-6);
+        border-bottom: 1px solid var(--hairline);
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://royal-flute-studio.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Book a Lesson", "item": "https://royal-flute-studio.com/book-online.html" }
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.jpeg" alt="Royal Flute Studio logo" />
-      <span class="brand__name">Royal Flute Studio</span>
-    </a>
-    <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">&#9776;</button>
-    <ul class="nav" id="primary-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="info.html">Info</a></li>
-      <li><a href="about-me.html">About Me</a></li>
-      <li><a href="book-online.html" aria-current="page">Book Online</a></li>
-    </ul>
-  </div>
+<!-- ──────── Masthead ──────── -->
+<header class="masthead">
+  <p class="masthead__locale">
+    <span>San Jose</span><span>California</span><span>Established 2018</span>
+  </p>
+  <p class="masthead__wordmark"><a href="index.html">Royal Flute Studio</a></p>
+  <nav class="masthead__nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="info.html">Info</a>
+    <a href="about-me.html">About</a>
+    <a href="book-online.html" aria-current="page">Book</a>
+  </nav>
 </header>
 
 <main>
-  <section class="section">
-    <h2 class="section__title">Book a Lesson</h2>
-    <div class="section__rule" aria-hidden="true"></div>
-    <p style="text-align:center; max-width:680px; margin:0 auto var(--space-4); color:var(--color-text-soft);">
-      Fill out the form below and we&rsquo;ll follow up by email to confirm a time. Trial lessons are available at beginner pricing.
-    </p>
 
-    <div class="form-wrap">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSd9w22QmXoDPvzhiXwWfcd-tYTxaLGpt7k3RkHihIw05ibLzw/viewform?embedded=true"
-        title="Royal Flute Studio booking form"
-        loading="lazy">
-        Loading&hellip;
-      </iframe>
+  <!-- ──────── Opener ──────── -->
+  <section class="book-opener reveal reveal-1">
+    <div class="grid">
+      <div class="book-opener__inner">
+        <p class="book-opener__eyebrow">Volume III · Reservations</p>
+        <h1 class="book-opener__title">Reserve a <em>lesson</em></h1>
+        <p class="book-opener__lede">Please share a few details &mdash; we will reply within forty-eight hours.</p>
+      </div>
     </div>
   </section>
+
+  <!-- ──────── Body: sidebar + form ──────── -->
+  <section class="book-body reveal reveal-2">
+    <div class="grid">
+
+      <aside class="book-aside">
+        <p class="book-aside__kicker">Reservation</p>
+        <h3>Before you <em>begin</em></h3>
+        <p class="book-aside__copy">
+          Please share the student&rsquo;s playing level, age, and primary goals. We will reply within
+          forty-eight hours to propose a time.
+        </p>
+
+        <div class="book-aside__rule"></div>
+
+        <p class="book-aside__heading">Or write directly</p>
+        <div class="book-aside__contact">
+          <a class="link-gold" href="tel:+14086589050">(408) 658&#8209;9050</a>
+          <a class="link-gold" href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a>
+        </div>
+
+        <div class="book-aside__rule"></div>
+
+        <p class="book-aside__note">Trial lessons are offered at the beginner rate.</p>
+      </aside>
+
+      <div class="book-form">
+        <p class="book-form__caption">
+          <span>The Intake Form</span>
+          <span>Hosted by Google Forms</span>
+        </p>
+        <div class="book-form__frame">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSd9w22QmXoDPvzhiXwWfcd-tYTxaLGpt7k3RkHihIw05ibLzw/viewform?embedded=true"
+            title="Royal Flute Studio booking form"
+            loading="lazy">
+            Loading the form&hellip;
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
+<!-- ──────── Footer ──────── -->
 <footer class="site-footer">
-  <div class="site-footer__inner">
-    <div>
-      <h4>Phone</h4>
-      <p><a href="tel:+14086589050">(408)&nbsp;658&#8209;9050</a></p>
+  <div class="grid site-footer__grid">
+    <div class="col-4 site-footer__col">
+      <p class="eyebrow">Studio</p>
+      <p class="site-footer__name">Royal Flute Studio</p>
+      <p class="site-footer__loc">San Jose, California</p>
     </div>
-    <div>
-      <h4>Email</h4>
-      <p><a href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a></p>
+    <div class="col-4 site-footer__col site-footer__contact">
+      <p class="eyebrow">Correspondence</p>
+      <a href="tel:+14086589050">(408) 658&#8209;9050</a>
+      <a href="mailto:royalflutestudio@gmail.com">royalflutestudio@gmail.com</a>
     </div>
-    <div>
-      <h4>Follow</h4>
+    <div class="col-4 site-footer__col">
+      <p class="eyebrow">Follow</p>
       <div class="socials">
         <a href="https://www.facebook.com/royalflute" aria-label="Facebook" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7v3.1h2.8V22H13z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7v3.1h2.8V22H13z"/></svg>
         </a>
         <a href="https://www.instagram.com/royalflutestudio/" aria-label="Instagram" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.7.9 1 1.5.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.7-1.5 1-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.7-.9-1-1.5-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.7 1.5-1 .4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.7.9 1 1.5.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.7-1.5 1-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.7-.9-1-1.5-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.7 1.5-1 .4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
         </a>
       </div>
     </div>
   </div>
-  <p class="site-footer__bottom">&copy; <span id="year"></span> Royal Flute Studio. All rights reserved.</p>
+
+  <div class="site-footer__bottom">
+    &copy; <span id="year"></span> Royal Flute Studio
+  </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.getElementById('primary-nav');
-  toggle && toggle.addEventListener('click', function () {
-    var open = nav.dataset.open === 'true';
-    nav.dataset.open = String(!open);
-    toggle.setAttribute('aria-expanded', String(!open));
-  });
 </script>
 
 </body>

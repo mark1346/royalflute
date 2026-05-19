@@ -1,0 +1,376 @@
+/* ============================================================
+   Royal Flute Studio — Design Tokens
+   "Conservatory Classicism"
+   References: Gramophone, Loro Piana, NYT T Magazine, Wigmore Hall.
+   Hairline rules. Serif typography. Generous whitespace.
+   No shadows, no radii, no glassmorphism.
+   ============================================================ */
+
+:root {
+  /* ── Color ────────────────────────────────────────────────── */
+  --bg-ivory:    #F4EFE6;   /* page background */
+  --bg-surface:  #EAE3D2;   /* alternate surface */
+  --bg-deep:     #1C1817;   /* footer / dark sections */
+
+  --ink:         #1C1817;   /* primary type */
+  --ink-soft:    #3D3631;   /* body copy */
+  --muted:       #8B7E6A;   /* meta, captions, eyebrows */
+
+  --royal:       #2B3A55;   /* rare structural accent */
+  --gold:        #B08D3E;   /* keyword underline, dot leaders, social icons */
+  --gold-soft:   #C9A95A;   /* lighter gold for hover */
+  --burgundy:    #5C1F2E;   /* drop caps, pull quotes, link hover */
+
+  --hairline:        rgba(28, 24, 23, 0.18);   /* default 1px rule */
+  --hairline-strong: rgba(28, 24, 23, 0.55);
+
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-display:  "Fraunces", "Cormorant Garamond", "Times New Roman", serif;
+  --font-body:     "Lora", Georgia, "Times New Roman", serif;
+  --font-accent:   "Italiana", "Cormorant Garamond", serif;
+
+  /* Fraunces variable-font axis presets
+     opsz  9 → 144   (optical size; larger = more display-tuned, finer joinery)
+     SOFT  0 → 100   (terminal softness; 0 = sharp, 100 = rounded fillets)
+     wght  100 → 900
+     ital  0 → 1
+     Use via   font-variation-settings: var(--fr-display);                 */
+  --fr-hero:     "opsz" 144, "SOFT" 30, "wght" 300;
+  --fr-display:  "opsz" 120, "SOFT" 40, "wght" 320;
+  --fr-h2:       "opsz" 96,  "SOFT" 50, "wght" 380;
+  --fr-pull:     "opsz" 72,  "SOFT" 70, "wght" 400;
+  --fr-h3:       "opsz" 48,  "SOFT" 50, "wght" 420;
+
+  /* Editorial type scale */
+  --t-hero:     clamp(4rem,    9vw,   8rem);     /* 64–128 px */
+  --t-display:  clamp(2.75rem, 5.5vw, 4.5rem);
+  --t-h2:       clamp(2rem,    3.4vw, 2.8rem);
+  --t-pull:     clamp(1.5rem,  2.6vw, 2.25rem);
+  --t-h3:       clamp(1.25rem, 1.8vw, 1.55rem);
+  --t-body:     1.0625rem;   /* 17 px — magazine reading rhythm */
+  --t-body-sm:  0.9375rem;
+  --t-eyebrow:  0.75rem;
+  --t-meta:     0.8125rem;
+
+  --tk-tight:   -0.014em;
+  --tk-body:    0.005em;
+  --tk-eyebrow: 0.32em;     /* open spacing for small caps */
+  --tk-kw:      0.08em;     /* keyword small-caps */
+
+  --lh-hero:    0.96;
+  --lh-display: 1.04;
+  --lh-heading: 1.12;
+  --lh-body:    1.74;       /* generous editorial leading */
+  --lh-tight:   1.2;
+
+  /* ── Spacing (9-step) ─────────────────────────────────────── */
+  --s-1:  0.25rem;
+  --s-2:  0.5rem;
+  --s-3:  0.75rem;
+  --s-4:  1rem;
+  --s-5:  1.5rem;
+  --s-6:  2.25rem;
+  --s-7:  3.5rem;
+  --s-8:  5.5rem;
+  --s-9:  7.5rem;          /* 120 px — minimum section gap */
+  --s-10: 11.25rem;        /* 180 px — chapter break */
+
+  /* ── Layout ───────────────────────────────────────────────── */
+  --max-page: 1340px;
+  --max-read: 720px;       /* article column max-width */
+  --gutter:   clamp(1.25rem, 3.2vw, 2.5rem);
+  --col:      minmax(0, 1fr);
+
+  /* ── Borders ──────────────────────────────────────────────── */
+  --rule:           1px solid var(--ink);
+  --rule-hairline:  1px solid var(--hairline);
+  --rule-gold:      1px solid var(--gold);
+
+  /* ── Motion ───────────────────────────────────────────────── */
+  --ease-editorial: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-stately:   cubic-bezier(0.16, 0.84, 0.44, 1);
+  --dur-fast: 240ms;
+  --dur-med:  520ms;
+  --dur-slow: 980ms;
+
+  --stagger-step: 100ms;
+}
+
+/* ============================================================
+   Reset & global baseline
+   ============================================================ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg-ivory);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tk-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "onum";   /* old-style figures */
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+  font-variation-settings: var(--fr-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tk-tight);
+}
+
+h1 { font-variation-settings: var(--fr-hero);    line-height: var(--lh-hero);    }
+h2 { font-variation-settings: var(--fr-h2);      line-height: var(--lh-display); }
+h3 { font-variation-settings: var(--fr-h3); }
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--hairline);
+  margin: 0;
+}
+
+::selection {
+  background: var(--burgundy);
+  color: var(--bg-ivory);
+}
+
+/* ============================================================
+   12-column editorial grid
+   ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, var(--col));
+  column-gap: var(--gutter);
+  max-width: var(--max-page);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.col-2  { grid-column: span 2;  }
+.col-3  { grid-column: span 3;  }
+.col-4  { grid-column: span 4;  }
+.col-5  { grid-column: span 5;  }
+.col-6  { grid-column: span 6;  }
+.col-7  { grid-column: span 7;  }
+.col-8  { grid-column: span 8;  }
+.col-9  { grid-column: span 9;  }
+.col-10 { grid-column: span 10; }
+.col-12 { grid-column: 1 / -1;  }
+
+.start-2 { grid-column-start: 2; }
+.start-3 { grid-column-start: 3; }
+.start-4 { grid-column-start: 4; }
+.start-5 { grid-column-start: 5; }
+.start-6 { grid-column-start: 6; }
+.start-7 { grid-column-start: 7; }
+.start-8 { grid-column-start: 8; }
+
+@media (max-width: 880px) {
+  .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10 {
+    grid-column: 1 / -1;
+  }
+  .start-2, .start-3, .start-4, .start-5, .start-6, .start-7, .start-8 {
+    grid-column-start: 1;
+  }
+}
+
+/* ============================================================
+   Editorial primitives
+   ============================================================ */
+
+/* Small-caps eyebrow (kicker line above section titles, dates, etc.) */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tk-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+
+.eyebrow--gold { color: var(--gold); }
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Italiana accent — names, pull quotes, decorative initials */
+.accent {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-style: normal;
+}
+
+/* Keyword treatment — small caps with hairline gold underline.
+   Use for venue / school names: Carnegie Hall, Royal College of Music. */
+.kw {
+  font-variant: all-small-caps;
+  letter-spacing: var(--tk-kw);
+  color: var(--ink);
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 calc(100% - 1px);
+  padding-bottom: 1px;
+}
+
+/* Drop cap — first letter of an article paragraph */
+.drop-cap::first-letter {
+  font-family: var(--font-accent);
+  float: left;
+  font-size: 5.2rem;
+  line-height: 0.84;
+  padding: 0.4rem 0.7rem 0 0;
+  color: var(--burgundy);
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: var(--font-display);
+  font-variation-settings: var(--fr-pull);
+  font-size: var(--t-pull);
+  line-height: 1.22;
+  letter-spacing: var(--tk-tight);
+  color: var(--burgundy);
+  font-style: italic;
+  border-top: var(--rule);
+  border-bottom: var(--rule);
+  padding-block: var(--s-5);
+  margin-block: var(--s-7);
+}
+
+.pull-quote cite {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--t-meta);
+  letter-spacing: var(--tk-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: var(--s-4);
+}
+
+/* Dot leader (concert-programme style) — title …………… meta */
+.dot-leader {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding-block: var(--s-4);
+  border-bottom: var(--rule-hairline);
+}
+
+.dot-leader__fill {
+  border-bottom: 1px dotted var(--muted);
+  transform: translateY(-0.42em);
+}
+
+.dot-leader__meta {
+  font-family: var(--font-accent);
+  font-size: var(--t-body-sm);
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+/* Hairline horizontal rule (use class, not <hr>, when you need control) */
+.rule        { height: 1px; background: var(--ink);      width: 100%; }
+.rule--soft  { height: 1px; background: var(--hairline); width: 100%; }
+.rule--gold  { height: 1px; background: var(--gold);     width: 100%; }
+.rule--short { width: 56px; }
+
+/* Link with left-to-right gold underline */
+.link-gold {
+  position: relative;
+  display: inline-block;
+  color: var(--ink);
+  transition: color var(--dur-fast) var(--ease-editorial);
+}
+.link-gold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-med) var(--ease-stately);
+}
+.link-gold:hover         { color: var(--burgundy); }
+.link-gold:hover::after  { transform: scaleX(1); }
+
+/* Roman-numeral section index — used inline as a chapter mark.
+   Example: <span class="roman">II</span> */
+.roman {
+  font-family: var(--font-accent);
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.3em;
+  color: var(--gold);
+}
+
+/* Section spacing */
+.section        { padding-block: var(--s-9);  }
+.section--tight { padding-block: var(--s-8);  }
+.section--wide  { padding-block: var(--s-10); }
+.section--alt   { background: var(--bg-surface); }
+
+/* ============================================================
+   Page-load staggered reveal
+   Add classes:  <element class="reveal reveal-2">
+   ============================================================ */
+@keyframes editorial-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.reveal {
+  opacity: 0;
+  animation: editorial-rise var(--dur-slow) var(--ease-stately) forwards;
+}
+.reveal-1 { animation-delay: 0ms;   }
+.reveal-2 { animation-delay: 100ms; }
+.reveal-3 { animation-delay: 200ms; }
+.reveal-4 { animation-delay: 300ms; }
+.reveal-5 { animation-delay: 400ms; }
+.reveal-6 { animation-delay: 500ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
